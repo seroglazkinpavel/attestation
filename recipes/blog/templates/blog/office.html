@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <section class="novelty">
+        <div class="catalog-slider">
+            <h1>Ваш кабинет</h1>
+            <hr>
+        </div>
+        <h2 class="your_recipes">Ваши рецепты</h2>
+        <div class="grid">
+            {% for product in products %}
+                <div class="grid-itm">
+                    <div class="grid-img">
+                        <a href="{{ product.get_absolute_url }}">
+                            {% if product.image %}
+                            <img src="{{ product.image.url }}" width="300" height="300" alt="chandler">
+                            {% endif %}
+                        </a>
+                    </div>
+                    <hr>
+                    <div class="product_catalog">
+                        <div class="catalog-item">
+                            <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+
+                        </div>
+                        <div class="catalog-item">
+                            <a href="{% url 'news_update' product.id %}"><i class="fa fa-edit"></i>Редактировать</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="catalog-slider">
+            <hr>
+        </div>
+    </section>
+
+{% endblock %}

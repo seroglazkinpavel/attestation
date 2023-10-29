@@ -1,0 +1,16 @@
+<nav class="{{ drop_down_list }}">
+    <label class="menu-btn" for="menu_switch_search">
+        <span></span>
+    </label>
+    <input id="menu_switch_search" type="checkbox">
+    <ul class="menu-list">
+        <li class="menu-list-item">
+            <span   class="menu-list-title">menu</span>
+        </li>
+        {%  for item in categories %}
+        <li class="menu-list-item">
+            <a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
