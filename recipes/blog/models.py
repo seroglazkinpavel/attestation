@@ -36,21 +36,3 @@ class Recipe(models.Model):
 
     def get_absolute_url(self):
         return reverse('recipe', kwargs={"rec_slug": self.slug})
-
-
-# class Ingredient(models.Model):
-#     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
-#     title = models.CharField(max_length=225, verbose_name='Название градиента')
-#     gradient_quantity = models.CharField(max_length=225, verbose_name='Количество градиента')
-#
-#     def __str__(self):
-#         return self.title
-#
-#
-# class СookingSteps(models.Model):
-#     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
-#     description = models.TextField(verbose_name='Описание', null=True, blank=True)
-#     image = models.ImageField(upload_to='photos/%Y/%m/%d/', verbose_name='Изображение', blank=True)
-#
-#     def __str__(self):
-#         return self.recipe
