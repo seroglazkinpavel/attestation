@@ -1,5 +1,5 @@
-# attestation
-# фреймворк Django
+# Attestation
+# Фреймворк Django
 
 ## Проект “Сайт рецептов” на Django
 ### Краткое описание задания
